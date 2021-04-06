@@ -46,102 +46,53 @@
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
-				<h1>Guess The Number Game!</h1>
+				<h1>Hangman!</h1>
 				<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
 				<h2>Source Code:</h2>
 				<script
-					src="http://gist-it.appspot.com/http://github.com/piku20/Python_Projects/blob/main/number_guess.py">
+					src="http://gist-it.appspot.com/http://https://github.com/piku20/Python_Projects/blob/main/hangman.py">
 				</script>
 				<p><pre>
-				# Random NUmber guess game:
+					#Hangman
 
-				import random
-				
-				
-				
-				print('Press 1 - AI asks , Player guesses.\nPress 2 - Player asks, AI guesses.\nPress 3 - Watch AI ask and guess.\n')
-				
-				choice = int(input(f'Enter a number: '))
-				
-				def func1():
-					#print('This is f1')
-					random_number = random.randint(1,10)
-					guess = 0
-				
-					print(random_number)
-				
-					while guess != random_number:
-						guess = int(input(f'Guess a number between 1 and 10: '))
+					import random
 					
-						if guess<random_number:
-							print('Sorry, guess again. Too low')
-						elif guess > random_number:
-							print('Sorry, guess again. Too high')
+					words = ['terminator', 'avengers', 'titanic', 'iron man', 'Jungle Book']
+					word = random.choice(words).upper()
+					guesses = ''
+					lives = 9
+					
+					
+					print(word)
+					print('Guess the movie!')
+					
+					while lives>0:
+						not_guessed = 0
 						
-					else:
-						print (f'Congrats! you have guess the number {random_number}')
-					
-				def func2():
-					#print('This is f2')
-					print("Guess a number from 1 to 100\n\n")
-				
-					low = 1
-					high = 100
-					feedback =''
-					
-					while feedback != 'c':
-						guess = random.randint(low, high)
-						feedback = input(f'Is {guess} too high(h), too low(l) or correct(c): ')
-						
-						if feedback == 'h':
-							high = guess-1
-						elif feedback == 'l':
-							low = guess+1
-							
-					else:
-						print(f'\nComputer guessed your number: {guess}')
-					
-				def func3():
-					#print('This is f3')
-					low = 1
-					high = 100
-					feedback = ''
-					
-					random_number = random.randint(low, high)
-					print (random_number)
-					
-					while feedback != 'correct':
-						guess = random.randint(low, high)
-						print(f'Is it {guess}?: ', end='')
-						
-						
-						if guess > random_number:
-							feedback = 'high'
-							print(f'That\'s {feedback}')
-							high = guess - 1
-							
-						elif guess < random_number:
-							feedback = 'low'
-							print(f'That\'s {feedback}')
-							low = guess +1
-							
-						else:
-							feedback = 'correct'
-							print('Yes!')
+						for char in word:
+							if char in guesses:
+								print(char, end=' ')
+							elif char == ' ':
+								print(' ', end=' ')
+							else:
+								print('_', end=' ')
+								not_guessed += 1
+						print()
 								
-					else:
+						if not_guessed == 0:
+							print('\nYou Win!')
+							break
 						
-						print(f'\nThe correct guess is {guess}')
-				
-				
-				if choice == 1:
-					func1()
-				elif choice ==2:
-					func2()
-				elif choice ==3:
-					func3()
-				else:
-					print('Sorry, invalid input!')
+						guess = input('Enter an alphabet: ').upper()
+						guesses += guess
+						
+						if guess not in word:
+							lives -= 1
+							print('Wrong')
+							print(f'You only have {lives} lives left')
+					
+					else:
+						print('You Lose!')
 				
 				</pre></p>
 
