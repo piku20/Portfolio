@@ -21,7 +21,7 @@
 
 				<!-- Logo -->
 				<a href="index.html" class="logo">
-					<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+					<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Portfolio</span>
 				</a>
 
 				<!-- Nav -->
@@ -50,32 +50,32 @@
 				<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
 				<h2>Source Code:</h2>
 				<script
-					src="http://gist-it.appspot.com/http://https://github.com/piku20/Python_Projects/blob/main/rock_paper_scissor.py">
+					src="http://gist-it.appspot.com/http://github.com/piku20/Python_Projects/blob/main/rock_paper_scissor.py">
 				</script>
 				<p><pre>
-					# Rock Paper Scissor
+# Rock Paper Scissor
 
-					import random
-					
-					def play():
-						
-						computer = random.choice(['r', 'p', 's'])
-						print(computer)
-						user = input("'R' for rock, 'P' for paper, S' for scissor: ")
-						
-						if user == computer:
-							return 'It\'s a draw!'
-						
-						if is_win(user, computer):
-							return 'You Win!'
-							
-						return 'You Lose!'
-						
-					def is_win(player, opponent):
-						if (player == 'r' and opponent == 's') or (player == 'p' and opponent == 'r') or (player == 's' and opponent == 'p'):
-							return True
-						
-					print(play())
+import random
+
+def play():
+	
+	computer = random.choice(['r', 'p', 's'])
+	print(computer)
+	user = input("'R' for rock, 'P' for paper, S' for scissor: ")
+	
+	if user == computer:
+		return 'It\'s a draw!'
+	
+	if is_win(user, computer):
+		return 'You Win!'
+		
+	return 'You Lose!'
+	
+def is_win(player, opponent):
+	if (player == 'r' and opponent == 's') or (player == 'p' and opponent == 'r') or (player == 's' and opponent == 'p'):
+		return True
+	
+print(play())
 				
 				</pre></p>
 

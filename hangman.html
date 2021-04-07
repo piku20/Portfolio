@@ -21,7 +21,7 @@
 
 				<!-- Logo -->
 				<a href="index.html" class="logo">
-					<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+					<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Portfolio</span>
 				</a>
 
 				<!-- Nav -->
@@ -50,49 +50,50 @@
 				<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
 				<h2>Source Code:</h2>
 				<script
-					src="http://gist-it.appspot.com/http://https://github.com/piku20/Python_Projects/blob/main/hangman.py">
+					src="http://gist-it.appspot.com/http://github.com/piku20/Python_Projects/blob/main/hangman.py">
 				</script>
+			
 				<p><pre>
-					#Hangman
+#Hangman
 
-					import random
-					
-					words = ['terminator', 'avengers', 'titanic', 'iron man', 'Jungle Book']
-					word = random.choice(words).upper()
-					guesses = ''
-					lives = 9
-					
-					
-					print(word)
-					print('Guess the movie!')
-					
-					while lives>0:
-						not_guessed = 0
-						
-						for char in word:
-							if char in guesses:
-								print(char, end=' ')
-							elif char == ' ':
-								print(' ', end=' ')
-							else:
-								print('_', end=' ')
-								not_guessed += 1
-						print()
-								
-						if not_guessed == 0:
-							print('\nYou Win!')
-							break
-						
-						guess = input('Enter an alphabet: ').upper()
-						guesses += guess
-						
-						if guess not in word:
-							lives -= 1
-							print('Wrong')
-							print(f'You only have {lives} lives left')
-					
-					else:
-						print('You Lose!')
+import random
+
+words = ['terminator', 'avengers', 'titanic', 'iron man', 'Jungle Book']
+word = random.choice(words).upper()
+guesses = ''
+lives = 9
+
+
+print(word)
+print('Guess the movie!')
+
+while lives>0:
+	not_guessed = 0
+	
+	for char in word:
+		if char in guesses:
+			print(char, end=' ')
+		elif char == ' ':
+			print(' ', end=' ')
+		else:
+			print('_', end=' ')
+			not_guessed += 1
+	print()
+			
+	if not_guessed == 0:
+		print('\nYou Win!')
+		break
+	
+	guess = input('Enter an alphabet: ').upper()
+	guesses += guess
+	
+	if guess not in word:
+		lives -= 1
+		print('Wrong')
+		print(f'You only have {lives} lives left')
+
+else:
+	print('You Lose!')
 				
 				</pre></p>
 
