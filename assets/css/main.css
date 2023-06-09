@@ -3327,3 +3327,9 @@ input, select, textarea {
 			}
 
 		}
+
+/*-------------------------------*/
+#weather{
+	width:"25%";
+	height:"25%",
+}
